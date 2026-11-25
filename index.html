@@ -45,6 +45,7 @@
       document.getElementById("percentage").textContent = (calculation * 100).toFixed(2) + "%";
       
     }
+    document.getElementById("calculate").addEventListener("click", calculate);
   </script>
 </head>
 
@@ -66,7 +67,7 @@
     <label for="target">target total</label>
     <input type="number" id="target" value="1" step="1">
 
-    <button onclick="calculate()">Calculate</button>
+    <button id="calculate">Calculate</button>
   
     <div>Probability</div>
     <div class="percentage" id="percentage"></div>
