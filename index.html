@@ -4,7 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Test Calculator</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Test Calculator</h2>
+
+    <label for="min">min value</label>
+    <input type="number" id="min" value="1" step="1">
+    <br>
+
+    <label for="max">max value</label>
+    <input type="number" id="max" value="10" step="1">
+    <br>
   
+    <label for="rolls">rolls</label>
+    <input type="number" id="rolls" value="2" min="1" step="1">
+    <br>
+
+    <label for="target">target total</label>
+    <input type="number" id="target" value="10" step="1">
+    <br>
+
+    <button id="calculate">Calculate</button>
+    <br>
+  
+    <div>Probability</div>
+    <div class="percentage" id="percentage"></div>
+  </div>
+
   <script>
     function calculateProbability(min, max, rolls, target) {
       let dp = new Map([[0, 1n]]);
@@ -39,41 +67,11 @@
       const target = Number(document.getElementById("target").value);
   
       const result = document.getElementById("result");
-  
       const calculation = calculateProbability(min, max, rolls, target);
   
       document.getElementById("percentage").textContent = (calculation * 100).toFixed(2) + "%";
-      
     }
     document.getElementById("calculate").addEventListener("click", calculate);
   </script>
-</head>
-
-<body>
-  <div class="container">
-    <h2>Test Calculator</h2>
-
-    <label for="min">min value</label>
-    <input type="number" id="min" value="1" step="1">
-    <br>
-
-    <label for="max">max value</label>
-    <input type="number" id="max" value="1" step="1">
-    <br>
-  
-    <label for="rolls">number of rolls</label>
-    <input type="number" id="rolls" value="1" min="1" step="1">
-    <br>
-
-    <label for="target">target total</label>
-    <input type="number" id="target" value="1" step="1">
-    <br>
-
-    <button id="calculate">Calculate</button>
-    <br>
-  
-    <div>Probability</div>
-    <div class="percentage" id="percentage"></div>
-  </div>
 </body>
 </html>
